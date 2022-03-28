@@ -18,10 +18,10 @@
         async function subscribe() {
             let sw = await navigator.serviceWorker.getRegistration();
             let push = await sw.pushManager.subscribe({
-                uservisibleonly: true,
-                applicationserverkey: 'BIS-R9FTyoTsHMwDfFRzDu79x4rcdTzJiAMJ8rNZGShD4d23satHnVuKurU0ywixTBrHVC3IWd_werdf0PNuNgs'
+                userVisibleOnly: true,
+                applicationServerKey: 'BIS-R9FTyoTsHMwDfFRzDu79x4rcdTzJiAMJ8rNZGShD4d23satHnVuKurU0ywixTBrHVC3IWd_werdf0PNuNgs'
             });
-            console.log(json.stringify(push));
+            console.log(JSON.stringify(push));
 
            
 
