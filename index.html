@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="/style/main.css" />
+</head>
+
+<body>
+    <button onclick="subscribe()">Subscribe</button>
+    <script>
+        addEventListener('load', async () => {
+            let sw = navigator.serviceWorker.register('./sw.js');
+            console.log(sw);
+        });
+
+        async function subscribe() {
+            let sw = await navigator.serviceworker.ready;
+            let push = await sw.pushmanager.subscribe({
+                uservisibleonly: true,
+                applicationserverkey: 'BIS-R9FTyoTsHMwDfFRzDu79x4rcdTzJiAMJ8rNZGShD4d23satHnVuKurU0ywixTBrHVC3IWd_werdf0PNuNgs'
+            });
+            console.log(json.stringify(push));
+
+           
+
+        }
+    </script>
+</body>
+</html>
