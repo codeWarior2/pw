@@ -16,7 +16,7 @@
         });
 
         async function subscribe() {
-            let sw = await navigator.serviceworker.ready;
+            let sw = await navigator.serviceWorker.getRegistration();
             let push = await sw.pushmanager.subscribe({
                 uservisibleonly: true,
                 applicationserverkey: 'BIS-R9FTyoTsHMwDfFRzDu79x4rcdTzJiAMJ8rNZGShD4d23satHnVuKurU0ywixTBrHVC3IWd_werdf0PNuNgs'
